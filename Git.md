@@ -47,11 +47,14 @@
 * با دستور status می توانید تغییرات ایجاد شده در پروژه را مشاهده کنید .
 > git status
 
-> On branch master
+```
+On branch master
 Your branch is up to date with 'origin/master'.
+
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
         index.html
+```
 
 * 
     *  خط 1 : به معنای این است که محل کار ما در branch master است. با branch در جلوتر آشنا می شوید.
@@ -67,12 +70,14 @@ Untracked files:
     > git add -A                              //add all files
 
     * پس از اجرای این دستور، فایل هایی که دچار تغییر شده اند stage می شوند. دستور status را وارد می کنم تا تغییرات را ببینیم :
-    > On branch master
+```
+On branch master
 Your branch is up to date with 'origin/master'.
+
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   index.html
-
+```
 * ثبت تغییرات فایل در مخزن:
     * با دستور commit پس از stage کردن فایل ها، تغییرات آنها ثبت می شود.
     * commit کردن به معنای اضافه کردن یه توضیح در مورد تغییرات ایجاد شده در پروژه است.
@@ -81,44 +86,56 @@ Changes to be committed:
     * پس حال باید فایل هایی که stage شده اند را commit کنیم .
     > git commit -m "Initialized project"
 
-    > [master bbd47f9] Initialized project
+```
+[master bbd47f9] Initialized project
 2 files changed, 28 insertions(+)
-create mode 100644 index.html
-PS C:\Users\Amir\Markdowns\GitTutorial>
+
+    create mode 100644 index.html
+```
 
 *وووو تبریک! شما اولین پروژه Git خود را ایجاد کردید.*
 
 حال با استفاده از دستور log می توانید تاریخچه commit های خود را بررسی کنید .
 > git log
 
-> commit bbd47f98afc91c8dc82fae79dc79e29097061979 (HEAD -> master)
+```
+commit bbd47f98afc91c8dc82fae79dc79e29097061979 (HEAD -> master)
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Thu Jul 27 00:44:24 2023 +0330
+
     Initialized project
--- --
+
 commit bef00d37b3bdceed076d113a432e85230436c279 (origin/master)
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Thu Jul 27 00:26:21 2023 +0330
+
     Edit tutorial
+
     Add some spaces and change in texts to become right to left
--- --
+
 commit 0fc16a62b8e2cd119cbd643518a9e7f1c4694e42
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Thu Jul 27 00:19:37 2023 +0330
+
     Write tutorial
+
     Write step 3 and log command
--- --
+
 commit e2fc65b42a0d49a2a7da1ec841dfac61ca10c78c
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Wed Jul 26 20:48:25 2023 +0330
+
     Revert "Write tutorial"
+
     This reverts commit 52c76779a06049aa56c88b665893abb94b43bee6.
--- --
+
 commit 52c76779a06049aa56c88b665893abb94b43bee6
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Wed Jul 26 20:43:52 2023 +0330
+
     Write tutorial
+
     Write until step 2
 
-
+```
 *پایان*
