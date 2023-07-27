@@ -99,43 +99,139 @@ Changes to be committed:
 > git log
 
 ```
-commit bbd47f98afc91c8dc82fae79dc79e29097061979 (HEAD -> master)
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:57:09 2023 +0330
+
+    Edit tutorial
+
+    Terminal results now have better writing and style
+
+commit de59f4db9e6597036fbee54a3b6eeeea69f6550f
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:53:43 2023 +0330
+
+    Edit tutorial
+
+    HTML codes now are readable
+
+commit ce2f44617b522ece09a4fedec66b9c684301f4e9
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:48:44 2023 +0330
+
+    Write tutorial
+
+    Create example
+
+commit bbd47f98afc91c8dc82fae79dc79e29097061979
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Thu Jul 27 00:44:24 2023 +0330
 
     Initialized project
 
-commit bef00d37b3bdceed076d113a432e85230436c279 (origin/master)
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Thu Jul 27 00:26:21 2023 +0330
+```
 
-    Edit tutorial
+## شاخه (branch) در گیت چیست و چه کاربردی دارد؟
 
-    Add some spaces and change in texts to become right to left
+هر پروژه ای که با گیت ایجاد می شود، یک شاخه(branch) اصلی به نام master دارد. branch فضایی است که گیت آن را تحت بررسی دارد و تغییرات آنرا ثبت می کند. معمولا در تیم های  نرم افزاری، شاخه‌های فرعی دیگری ساخته و در آن‌ها اقدام به توسعه فیچرهای جدید نموده سپس آن‌ها را با شاخه master ادغام می کنند.
 
-commit 0fc16a62b8e2cd119cbd643518a9e7f1c4694e42
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Thu Jul 27 00:19:37 2023 +0330
+برای درک بهتر این موضوع، فرض کنیم توسعه دهنده ای به نام امیر قرار است قابلیت فرم ثبت نام را به پروژه بیفزاید و توسعه دهنده دیگری به نام علی قرار است تا رابط کاربری را تکمیل کند؛ در چنین شرایطی، می‌توان دو شاخه فرعی تحت عنواین دلخواهی همچون amir-branch-signup و ali-branch-ui ایجاد کرده و هر کدام از ایشان با سهولت هرچه تمام‌تر شروع به کدنویسی کرده و چنانچه در نهایت کدهای نوشته‌ شده مورد تأیید مدیر فنی بود،‌ با شاخه اصلی (master) ادغام خواهند شد.
 
-    Write tutorial
+به عنوان مثال، آقای x در تیم می خواهد صفحه ثبت نامی به پروژه اضافه کند. اما نمی خواهد تا قبل از اینکه تایید مدیر پروژه را بگیرد تغییرات را مستقیم روی پروژه ایجاد کند.
+پس او یک branch به اسم signup به پروژه اضافه می کند.
 
-    Write step 3 and log command
+> git branch signup
 
-commit e2fc65b42a0d49a2a7da1ec841dfac61ca10c78c
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Wed Jul 26 20:48:25 2023 +0330
+با نوشتن این دستور، شاخه ای به اسم signup ایجاد می شود. برای دیدن لیست کل اسامی شاخه های پروژه گیت می توانید دستور زیر را وارد کنید.
 
-    Revert "Write tutorial"
-
-    This reverts commit 52c76779a06049aa56c88b665893abb94b43bee6.
-
-commit 52c76779a06049aa56c88b665893abb94b43bee6
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Wed Jul 26 20:43:52 2023 +0330
-
-    Write tutorial
-
-    Write until step 2
+> git branch
 
 ```
+* master
+  signup
+```
+
+علامت '*' به معنی این است که شما همچنان در شاخه master هستید. در این حال هر تغییراتی که در پروژه ایجاد کنید در شاخه master اعمال می شود.
+برای انتقال به شاخه signup، دستور زیر را وارد کنید.
+
+> git checkout signup
+
+```
+Switched to branch 'signup'
+```
+
+این پیغام به این معنی است که با موفقیت به شاخه signup منتقل شدید. اگر دوباره دستور ``` git branch ``` را وارد کنید می بینید که اکنون در شاخه signup قرار دارید.
+
+> git branch
+
+```
+* signup
+```
+
+ساخت یک شاخه جدید، مانند ساخت یک فولدر جدید می ماند. هر تغییری که در این پوشه ایجاد کنید، مانند اضافه کردن فایل های جدید یا تغییر در دیگر فایل، تنها در این شاخه بوجود می آید و با swicth کردن به شاخه دیگر، تغییرات ایجاد شده ناپدید می شوند و تنها commit هایی که در آن شاخه ثبت شده اند در فولدر نمایش داده می شوند.
+
+آقای x شروع به ساخت فایل signup.html در شاخه signup می کند.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ثبت نام</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>ثبت نام</legend>
+            <div>
+                <label>نام : </label>
+                <input type="text">
+            </div>
+            <div>
+                <label>نام خانوادگی: </label>
+                <input type="text">
+            </div>
+            <div>
+                <label>پست الکترونیک: </label>
+                <input type="email">
+            </div>
+            <div>
+                <label>تولد: </label>
+                <input type="date">
+            </div>
+            <div>
+                <label>شماره تلفن: </label>
+                <input type="number">
+            </div>
+            <div>
+                <label>رمز عبور: </label>
+                <input type="password">
+            </div>
+            <div>
+                <input type="submit" value="ثبت"/>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
+```
+
+پس از پایان نوشتن کد، اگر status شاخه را بررسی کنیم، می بینیم که تغییرات ایجاد شده در شاخه signup را نمایش می دهد.
+
+> git status
+
+```
+On branch signup
+Changes not staged for commit:
+  
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        signup.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+فایل جدید را add و commit می کنیم.
+> git add -A
+
+> git commit -m 
+
 *پایان*
