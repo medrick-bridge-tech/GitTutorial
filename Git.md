@@ -99,35 +99,34 @@ Changes to be committed:
 > git log
 
 ```
-commit bbd47f98afc91c8dc82fae79dc79e29097061979 (HEAD -> master)
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:57:09 2023 +0330
+
+    Edit tutorial
+
+    Terminal results now have better writing and style
+
+commit de59f4db9e6597036fbee54a3b6eeeea69f6550f
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:53:43 2023 +0330
+
+    Edit tutorial
+
+    HTML codes now are readable
+
+commit ce2f44617b522ece09a4fedec66b9c684301f4e9
+Author: Amir Yazdan <begal.cmay@gmail.com>
+Date:   Thu Jul 27 00:48:44 2023 +0330
+
+    Write tutorial
+
+    Create example
+
+commit bbd47f98afc91c8dc82fae79dc79e29097061979
 Author: Amir Yazdan <begal.cmay@gmail.com>
 Date:   Thu Jul 27 00:44:24 2023 +0330
 
     Initialized project
-
-commit bef00d37b3bdceed076d113a432e85230436c279 (origin/master)
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Thu Jul 27 00:26:21 2023 +0330
-
-    Edit tutorial
-
-    Add some spaces and change in texts to become right to left
-
-commit 0fc16a62b8e2cd119cbd643518a9e7f1c4694e42
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Thu Jul 27 00:19:37 2023 +0330
-
-    Write tutorial
-
-    Write step 3 and log command
-
-commit e2fc65b42a0d49a2a7da1ec841dfac61ca10c78c
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Wed Jul 26 20:48:25 2023 +0330
-
-    Revert "Write tutorial"
-
-    This reverts commit 52c76779a06049aa56c88b665893abb94b43bee6.
 
 ```
 
@@ -145,6 +144,11 @@ Date:   Wed Jul 26 20:48:25 2023 +0330
 با نوشتن این دستور، شاخه ای به اسم signup ایجاد می شود. برای دیدن لیست کل اسامی شاخه های پروژه گیت می توانید دستور زیر را وارد کنید.
 
 > git branch
+
+```
+* master
+  signup
+```
 
 علامت '*' به معنی این است که شما همچنان در شاخه master هستید. در این حال هر تغییراتی که در پروژه ایجاد کنید در شاخه master اعمال می شود.
 برای انتقال به شاخه signup، دستور زیر را وارد کنید.
