@@ -129,13 +129,110 @@ Date:   Wed Jul 26 20:48:25 2023 +0330
 
     This reverts commit 52c76779a06049aa56c88b665893abb94b43bee6.
 
-commit 52c76779a06049aa56c88b665893abb94b43bee6
-Author: Amir Yazdan <begal.cmay@gmail.com>
-Date:   Wed Jul 26 20:43:52 2023 +0330
+commit 52c76779a06049aa56c88b665893abb94b43bee6* master
+  signup
+```
 
-    Write tutorial
+علامت '*' به معنی این است که شما همچنان در شاخه master هستید. در این حال هر تغییراتی که در پروژه ایجاد کنید در شاخه master اعمال می شود.
+برای انتقال به شاخه signup، دستور زیر را وارد کنید.
 
-    Write until step 2
+> git checkout signup
 
 ```
+Switched to branch 'signup'
+```
+
+این پیغام به این معنی است که با موفقیت به شاخه signup منتقل شدید. اگر دوباره دستور ``` git branch ``` را وارد کنید می بینید که اکنون در شاخه signup قرار دارید.
+
+> git branch
+
+```
+* signup
+```
+
+ساخت یک شاخه جدید، مانند ساخت یک فولدر جدید می ماند. هر تغییری که در این پوشه ایجاد کنید، مانند اضافه کردن فایل های جدید یا تغییر در دیگر فایل، تنها در این شاخه بوجود می آید و با swicth کردن به شاخه دیگر، تغییرات ایجاد شده ناپدید می شوند و تنها commit هایی که در آن شاخه ثبت شده اند در فولدر نمایش داده می شوند.
+
+آقای x شروع به ساخت فایل signup.html در شاخه signup می کند.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ثبت نام</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>ثبت نام</legend>
+            <div>
+                <label>نام : </label>
+                <input type="text">
+            </div>
+            <div>
+                <label>نام خانوادگی: </label>
+                <input type="text">
+            </div>
+            <div>
+                <label>پست الکترونیک: </label>
+                <input type="email">
+            </div>
+            <div>
+                <label>تولد: </label>
+                <input type="date">
+            </div>
+            <div>
+                <label>شماره تلفن: </label>
+                <input type="number">
+            </div>
+            <div>
+                <label>رمز عبور: </label>
+                <input type="password">
+            </div>
+            <div>
+                <input type="submit" value="ثبت"/>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
+```
+
+پس از پایان نوشتن کد، اگر status شاخه را بررسی کنیم، می بینیم که تغییرات ایجاد شده در شاخه signup را نمایش می دهد.
+
+> git status
+
+```
+On branch signup
+Changes not staged for commit:
+  
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        signup.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+فایل جدید را add و commit می کنیم.
+> git add -A
+
+> git commit -m "Create sign up form"
+
+```
+[signup 5adfc99] Create sign up form
+ 2 files changed, 154 insertions(+), 18 deletions(-)
+ create mode 100644 signup.html
+```
+
+ commit می کنیم.
+> git add -A
+
+> git commit -m "Create sign up form"
+
+```
+[signup 5adfc99] Create sign up form
+ 2 files changed, 154 insertions(+), 18 deletions(-)
+ create mode 100644 signup.html
+```
+
+>>>>>>> Stashed changes
 *پایان*
