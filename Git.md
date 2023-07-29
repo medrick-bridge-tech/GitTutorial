@@ -242,5 +242,70 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 حال در شاخه signup ما صفحه ثبت نام خودمون رو بوجود آوردیم، اما با انتقال به شاخه master، فایل signup.html ناگهان ناپدید می شود. این بدلیل آن است که تغییرات ایجاد شده در شاخه signup اعمال و ذخیره شده و تنها در این شاخه اعتبار و موجودیت دارد. برای اعمال تغییرات ایجاد شده در شاخه master، باید آنرا با شاخه signup ادغام یا به عبارتی merge کنید.
 
+## چگونه دو شاخه با یکدیگر ادغام (merge) می شوند؟
+
+برای ادغام دو شاخه، از دستور merge استفاده می کنیم.
+> git merge branch-name
+
+در مثال خودمون ابتدا به شاخه اصلی می رویم و سپس دستور merge را به گونه زیر تایپ می کنیم : 
+> git checkout master
+
+> git merge signup
+
+```
+Updating 472efeb..e2a4cad
+Fast-forward
+ signup.html | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+ create mode 100644 signup.html
+```
+
+دو شاخه با موفقیت با یکدیگر ادغام شدند . حال خانم y وظیفه دارد یک عکس و یک لینک به صفحه ثبت نام به پروژه اضافه کند. پس یک شاخه به اسم addneeds اضافه می کند:
+
+> git branch addneeds
+
+> git checkout addneeds
+
+کد index.html رو تغییر می دهد: 
+
+```
+<!DOCTYPE html>
+<html>
+<body>
+    <a href="signup.html"><img src='index.png' alt="sign up"></a>
+    <h1>Hello World</h1>
+</body>
+</html>
+```
+[دانلود_عکس](https://cdn-icons-png.flaticon.com/512/5455/5455873.png)
+
+سپس commit و add می کند:
+
+> git add -A
+
+> git commit -m "git commit -m "Add an image and a link on  main page to go to the sign up page"
+
+```
+[addneeds 7be4316] Add an image and a link on  main page to go to the sign up page
+ 2 files changed, 1 insertion(+)
+ create mode 100644 index.png
+```
+
+پس از گرفتن تاییدیه از مدیر پروژه، مسیر ادغام را طی می کند:
+
+> git checkout master
+
+> git merge addneeds
+
+```
+Updating e2a4cad..7be4316
+Fast-forward
+ index.html |   1 +
+ index.png  | Bin 0 -> 4992 bytes
+ 2 files changed, 1 insertion(+)
+ create mode 100644 index.png
+```
+
+با موفقیت ادغام شد ;) !!!!
 
 *پایان*
