@@ -359,3 +359,6 @@ Fast-forward
 <b>پایان</b>
 
 </div>
+
+## More Resources
+- [Let's Do it with Mosh](https://www.youtube.com/watch?v=8JJ101D3knE)
